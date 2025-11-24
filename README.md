@@ -26,15 +26,15 @@ I'm an **Engineering Student** passionate about building web and mobile applicat
 
 
 ## 📈 GitHub Stats
-![Sadman's GitHub stats](https://github-readme-stats.vercel.app/api?username=SadmanSakibShaon&show_icons=true&theme=tokyonight)  
+![Sadman's GitHub stats](https://github-readme-stats.vercel.app/api?username=Sadmanss&show_icons=true&theme=tokyonight)  
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=SadmanSakibShaon&layout=compact&theme=tokyonight)  
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Sadmanss&layout=compact&theme=tokyonight)  
 
 
 
 ## 💻 Projects
 - **[Ghatpar.store](https://ghatpar.store)** – Real-time grocery delivery platform with multi-role dashboards.  
-- **[E-Governance Complaint System](https://sadmansakibshaon.github.io/E-Governance-Complaint-Management-System-for-Urban-Municipal-Services/)** – UI built with HTML, CSS, and Tailwind.  
+- **[E-Governance Complaint System](https://sadmanss.github.io/E-Governance-Complaint-Management-System-for-Urban-Municipal-Services/)** – UI built with HTML, CSS, and Tailwind.  
 - **[Social Media Productivity Survey](https://github.com/yourusername/social-media-productivity)** – Analysis of social media impact on student productivity.  
 
 
