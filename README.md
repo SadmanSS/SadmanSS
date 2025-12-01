@@ -33,7 +33,7 @@ I'm an **Engineering Student** passionate about building web and mobile applicat
 
 
 ## 💻 Projects
-- **[Ghatpar.store](https://studio--studio-2541954851-8ac70.us-central1.hosted.app)** – Real-time grocery delivery platform with multi-role dashboards.  
+- **[Ghatpar.store](https://ghatpar.store)** – Real-time grocery delivery platform with multi-role dashboards.  
 - **[E-Governance Complaint System](https://sadmanss.github.io/E-Governance-Complaint-Management-System-for-Urban-Municipal-Services/)** – UI built with HTML, CSS, and Tailwind.  
 - **[Social Media Productivity Survey](https://github.com/yourusername/social-media-productivity)** – Analysis of social media impact on student productivity.  
 
