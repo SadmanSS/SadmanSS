@@ -34,7 +34,7 @@ I'm an **Engineering Student** passionate about building web and mobile applicat
 
 ## 💻 Projects
 - **[Agrione](https://agrione.site/)** - Smart platform for Farmers & Buyers(In Development).
-- **[Ghatpar](https://studio--studio-2541954851-8ac70.us-central1.hosted.app/)** – Real-time grocery delivery platform with multi-role dashboards(In Development).
+- **[Ghatpar](https://ghatpar.vercel.app/)** – Real-time grocery delivery platform with multi-role dashboards(In Development).
 - **[E-Governance Complaint System](https://sadmanss.github.io/E-Governance-Complaint-Management-System-for-Urban-Municipal-Services/)** – UI built with HTML, CSS, and Tailwind( Demo Only No Backend Connected).
 - **[AvalonMart](https://avalonmart.com)** – Full-stack e-commerce platform built with Next.js, Firebase, Tailwind CSS, and TypeScript featuring authentication, product management, shopping cart, secure checkout, and admin dashboard(In Development).
 
