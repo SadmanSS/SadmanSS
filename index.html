@@ -1,148 +1,1417 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sadman Sakib | Portfolio</title>
-  <style>
-    :root {
-      --primary: #f6851b;
-      --primary-dark: #d2691e;
-      --bg-light: #ffffff;
-      --bg-dark: #121212;
-      --text-light: #111;
-      --text-dark: #eee;
-      --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      --transition: 0.3s;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1020" />
 
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-sans); }
+    <meta name="description"
+        content="Sadman Sakib Shaon — Aspiring AI Engineer building intelligent applications, AI-driven products, and scalable software systems." />
 
-    body {
-      background: var(--bg-light);
-      color: var(--text-light);
-      transition: background var(--transition), color var(--transition);
-      line-height: 1.6;
-    }
+    <title>Sadman Sakib Shaon | AI Engineer Portfolio</title>
 
-    @media (prefers-color-scheme: dark) {
-      body { background: var(--bg-dark); color: var(--text-dark); }
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    .container { max-width: 1100px; margin: auto; padding: 2rem; }
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
 
-    header.hero {
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;
-      padding: 3rem 0;
-    }
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #a78bfa;
 
-    .hero-text h1 { font-size: 3rem; font-weight: 900; color: var(--primary); }
-    .hero-text p { font-size: 1.2rem; margin-top: 1rem; }
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --surface-secondary: #f1f5f9;
 
-    .btn { display: inline-block; background: var(--primary); color: #fff; padding: 0.8rem 1.6rem;
-           border-radius: 25px; margin-top: 1.5rem; text-decoration: none; transition: 0.3s; }
-    .btn:hover { background: var(--primary-dark); }
+            --text: #111827;
+            --text-secondary: #64748b;
+            --border: #e2e8f0;
 
-    .hero-image img {
-      width: 280px; border-radius: 50%; box-shadow: 0 15px 30px rgba(246, 133, 27, 0.3);
-      animation: float 4s ease-in-out infinite;
-    }
-    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+            --gradient: linear-gradient(135deg, #6366f1, #06b6d4);
 
-    section { padding: 3rem 0; }
-    section h2 { text-align: center; color: var(--primary); margin-bottom: 2rem; font-size: 2rem; }
+            --font: "Inter", sans-serif;
+            --transition: 0.3s ease;
+        }
 
-    /* Skills */
-    .skills { display: flex; justify-content: center; }
-    .skills img { max-width: 100%; }
+        [data-theme="dark"] {
+            --bg: #0b1020;
+            --surface: #11182b;
+            --surface-secondary: #172036;
 
-    /* Projects */
-    .projects-grid {
-      display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 1.5rem;
-    }
-    .project-card {
-      background: #fff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .project-card:hover { transform: translateY(-6px); box-shadow: 0 12px 25px rgba(0,0,0,0.2); }
-    @media (prefers-color-scheme: dark) {
-      .project-card { background: #1e1e1e; }
-    }
-    .project-card h3 { margin-bottom: 0.8rem; color: var(--primary); }
+            --text: #f1f5f9;
+            --text-secondary: #9ca9bd;
+            --border: #26334d;
+        }
 
-    /* Contact */
-    .contact { text-align: center; }
-    .contact a { color: var(--primary); text-decoration: none; }
-    .contact a:hover { color: var(--primary-dark); }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    footer { text-align: center; padding: 2rem 0; font-size: 0.9rem; color: gray; }
-  </style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            transition: background var(--transition), color var(--transition);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            transition: background var(--transition);
+        }
+
+        .nav-content {
+            min-height: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            transition: color var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .theme-toggle,
+        .menu-toggle {
+            background: var(--surface-secondary);
+            color: var(--text);
+            border: 1px solid var(--border);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        /* BUTTONS */
+
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            color: white;
+            background: var(--gradient);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border);
+            color: var(--text);
+            background: var(--surface);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 110px 0 90px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            align-items: center;
+            gap: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: rgba(99, 102, 241, 0.08);
+            filter: blur(100px);
+            border-radius: 50%;
+            top: 0;
+            right: 0;
+            pointer-events: none;
+        }
+
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 7px 13px;
+            border-radius: 30px;
+            background: var(--surface-secondary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 22px;
+        }
+
+        .availability-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.3rem);
+            font-weight: 800;
+            line-height: 1.13;
+            letter-spacing: -2.5px;
+            margin-bottom: 20px;
+        }
+
+        .gradient-text {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.12rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .hero-description {
+            color: var(--text-secondary);
+            max-width: 620px;
+            font-size: 0.98rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin-top: 30px;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .image-wrapper {
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+
+        .image-wrapper::before {
+            content: "";
+            position: absolute;
+            inset: -12px;
+            border: 2px solid transparent;
+            border-radius: 30px;
+            background: linear-gradient(var(--bg), var(--bg)) padding-box,
+                var(--gradient) border-box;
+            transform: rotate(5deg);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* COMMON SECTIONS */
+
+        section {
+            padding: 85px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-label {
+            color: var(--primary);
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin: 10px 0;
+        }
+
+        .section-heading p {
+            color: var(--text-secondary);
+            max-width: 620px;
+            margin: auto;
+            font-size: 0.95rem;
+        }
+
+        /* ABOUT */
+
+        .about-content {
+            max-width: 830px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: var(--text-secondary);
+            margin-bottom: 18px;
+            font-size: 1rem;
+        }
+
+        .about-highlight {
+            color: var(--text) !important;
+            font-weight: 600;
+        }
+
+        /* FOCUS AREAS */
+
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .focus-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 27px;
+            transition: var(--transition);
+        }
+
+        .focus-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .focus-icon {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 13px;
+            background: var(--surface-secondary);
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+        }
+
+        .focus-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 9px;
+        }
+
+        .focus-card p {
+            color: var(--text-secondary);
+            font-size: 0.87rem;
+        }
+
+        /* SKILLS */
+
+        .skills-wrapper {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 35px;
+        }
+
+        .skill-category {
+            margin-bottom: 30px;
+        }
+
+        .skill-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-category h3 {
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            padding: 9px 15px;
+            background: var(--surface-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.83rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .skill-tag.ai {
+            border-color: rgba(99, 102, 241, 0.3);
+            color: var(--primary);
+        }
+
+        .skills-icons {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .skills-icons img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* PROJECTS */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 23px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 27px;
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(99, 102, 241, 0.08);
+        }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+            gap: 12px;
+        }
+
+        .project-icon {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: var(--surface-secondary);
+            font-size: 1.5rem;
+        }
+
+        .project-status {
+            font-size: 0.72rem;
+            color: var(--primary);
+            background: rgba(99, 102, 241, 0.09);
+            padding: 5px 11px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        .project-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 9px;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 17px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 22px;
+        }
+
+        .project-tech span {
+            font-size: 0.72rem;
+            background: var(--surface-secondary);
+            padding: 5px 9px;
+            border-radius: 5px;
+            color: var(--text-secondary);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: var(--primary);
+            font-size: 0.88rem;
+            font-weight: 700;
+            margin-top: auto;
+            width: fit-content;
+        }
+
+        .project-link:hover {
+            gap: 12px;
+        }
+
+        /* AI ROADMAP */
+
+        .roadmap {
+            background: var(--surface-secondary);
+            border-radius: 20px;
+            padding: 42px;
+            border: 1px solid var(--border);
+        }
+
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .roadmap-item {
+            display: flex;
+            gap: 14px;
+            padding: 18px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .roadmap-number {
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 0.9rem;
+        }
+
+        .roadmap-item h3 {
+            font-size: 0.93rem;
+            margin-bottom: 5px;
+        }
+
+        .roadmap-item p {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            max-width: 750px;
+            margin: auto;
+            text-align: center;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 48px 30px;
+            border-radius: 20px;
+        }
+
+        .contact-box h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-top: 28px;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 25px 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 75px;
+                gap: 50px;
+            }
+
+            .hero-description {
+                margin: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                grid-row: 1;
+            }
+
+            .image-wrapper {
+                width: 240px;
+                height: 240px;
+            }
+
+            .focus-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                padding: 25px;
+                background: var(--surface);
+                border-bottom: 1px solid var(--border);
+                gap: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                letter-spacing: -1.5px;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .focus-grid,
+            .projects-grid,
+            .roadmap-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-wrapper,
+            .roadmap {
+                padding: 24px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <!-- Hero -->
-    <header class="hero">
-      <div class="hero-text">
-        <h1>Sadman Sakib Shaon</h1>
-        <p>Engineering Student | Web & Mobile Developer | Tech Enthusiast</p>
-        <a href="#contact" class="btn">Contact Me</a>
-      </div>
-      <div class="hero-image">
-        <img src="images/MY.jpg" alt="Sadman Sakib">
-      </div>
-    </header>
 
-    <!-- About -->
-    <section>
-      <h2>🚀 About Me</h2>
-      <p style="max-width: 800px; margin: auto; text-align: center;">
-        I’m an Engineering Student passionate about building web and mobile applications. 
-        I enjoy working with modern frameworks like React, Next.js, and Flutter, and I love exploring 
-        UI/UX design, project optimization, and data visualization. Currently working on 
-        <b>Ghatpar.store</b>, a grocery delivery platform powered by React and Firebase.
-      </p>
-    </section>
+    <!-- NAVIGATION -->
 
-    <!-- Skills -->
-    <section>
-      <h2>🛠️ Skills</h2>
-      <div class="skills">
-        <img src="https://skillicons.dev/icons?i=js,ts,python,dart,react,next,flutter,tailwind,firebase,git,vscode,androidstudio" alt="skills" />
-      </div>
-    </section>
+    <nav class="navbar">
+        <div class="container nav-content">
 
-    <!-- Projects -->
-    <section>
-      <h2>💻 Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Ghatpar.store</h3>
-          <p>Real-time grocery delivery platform with multi-role dashboards.</p>
-          <a href="https://ghatpar.store" target="_blank">View Project →</a>
+            <a href="#home" class="logo"><span>Sadmanss</span> </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#roadmap">AI Journey</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">🌙</button>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation"
+                    aria-expanded="false">☰</button>
+            </div>
+
         </div>
-        <div class="project-card">
-          <h3>E-Governance Complaint System</h3>
-          <p>User interface for municipal complaint management system using HTML, CSS, and Tailwind.</p>
-          <a href="https://sadmansakibshaon.github.io/E-Governance-Complaint-Management-System-for-Urban-Municipal-Services/" target="_blank">View Project →</a>
-        </div>
-        <div class="project-card">
-          <h3>Social Media Productivity Survey</h3>
-          <p>Survey & analysis on the impact of social media on student productivity.</p>
-          <a href="https://github.com/yourusername/social-media-productivity" target="_blank">View Project →</a>
-        </div>
-      </div>
-    </section>
+    </nav>
 
-    <!-- Contact -->
-    <section id="contact" class="contact">
-      <h2>📫 Get in Touch</h2>
-      <p>Connect with me on <a href="https://www.linkedin.com/in/sadmansakibshaon/" target="_blank">LinkedIn</a> or email me at 
-      <a href="mailto:sadmansakib9653@gmail.com">sadmansakib9653@gmail.com</a>.</p>
-    </section>
-  </div>
 
-  <footer>
-    <p>© 2025 Sadman Sakib Shaon — Built with ❤️ and Code</p>
-  </footer>
+    <main>
+
+        <!-- HERO -->
+
+        <div class="container">
+            <header class="hero" id="home">
+
+                <div class="hero-text">
+
+                    <div class="availability">
+                        <span class="availability-dot"></span>
+                        Computer Science & Engineering Student
+                    </div>
+
+                    <h1>
+                        Building the Future with
+                        <span class="gradient-text">Artificial Intelligence.</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Aspiring AI Engineer | Full-Stack Developer | AI-Driven Product Builder
+                    </p>
+
+                    <p class="hero-description">
+                        I'm Sadman Sakib Shaon, a Computer Science and Engineering student
+                        passionate about Artificial Intelligence, intelligent systems,
+                        and building software that solves real-world problems.
+
+                        I combine full-stack engineering foundations with AI-assisted
+                        development workflows to design, build, and evolve modern
+                        software products.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            Explore My Projects →
+                        </a>
+
+                        <a href="#contact" class="btn btn-outline">
+                            Let's Connect
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="images/MY.jpg" alt="Sadman Sakib Shaon" />
+                    </div>
+                </div>
+
+            </header>
+        </div>
+
+
+        <!-- ABOUT -->
+
+        <section id="about">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Introduction</span>
+                    <h2>About Me</h2>
+                    <p>
+                        An engineer focused on building intelligent solutions
+                        through technology and continuous learning.
+                    </p>
+                </div>
+
+                <div class="about-content">
+
+                    <p>
+                        I'm currently pursuing my degree in Computer Science and
+                        Engineering at Independent University, Bangladesh (IUB).
+                        My journey started with software and application development,
+                        where I developed an interest in designing and building
+                        complete digital products.
+                    </p>
+
+                    <p>
+                        Over time, my interests have expanded toward Artificial
+                        Intelligence, Generative AI, Large Language Models, and
+                        intelligent automation.
+                    </p>
+
+                    <p>
+                        I use AI-assisted development tools across my projects
+                        for problem-solving, coding, debugging, documentation,
+                        and improving development workflows.
+                    </p>
+
+                    <p class="about-highlight">
+                        My long-term goal is to become an AI Engineer capable of
+                        designing, integrating, deploying, and maintaining
+                        production-ready AI-powered systems.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- AREAS OF INTEREST -->
+
+        <section id="focus">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">What Drives Me</span>
+                    <h2>Areas of Interest</h2>
+                    <p>
+                        The technologies and engineering disciplines shaping
+                        my career direction.
+                    </p>
+                </div>
+
+                <div class="focus-grid">
+
+                    <div class="focus-card">
+                        <div class="focus-icon">🧠</div>
+                        <h3>Artificial Intelligence</h3>
+                        <p>
+                            Exploring machine learning, AI fundamentals,
+                            intelligent systems, and practical AI applications.
+                        </p>
+                    </div>
+
+                    <div class="focus-card">
+                        <div class="focus-icon">🤖</div>
+                        <h3>Generative AI & LLMs</h3>
+                        <p>
+                            Exploring large language models, prompt engineering,
+                            AI APIs, and LLM-powered applications.
+                        </p>
+                    </div>
+
+                    <div class="focus-card">
+                        <div class="focus-icon">🔗</div>
+                        <h3>AI Agents & Automation</h3>
+                        <p>
+                            Learning how intelligent agents interact with tools,
+                            execute workflows, and automate complex tasks.
+                        </p>
+                    </div>
+
+                    <div class="focus-card">
+                        <div class="focus-icon">📚</div>
+                        <h3>RAG & Knowledge Systems</h3>
+                        <p>
+                            Exploring embeddings, vector databases,
+                            semantic search, and Retrieval-Augmented Generation.
+                        </p>
+                    </div>
+
+                    <div class="focus-card">
+                        <div class="focus-icon">⚙️</div>
+                        <h3>AI Application Engineering</h3>
+                        <p>
+                            Combining AI capabilities with APIs, backend systems,
+                            databases, and modern application architectures.
+                        </p>
+                    </div>
+
+                    <div class="focus-card">
+                        <div class="focus-icon">☁️</div>
+                        <h3>Cloud & AI Deployment</h3>
+                        <p>
+                            Interested in building scalable applications,
+                            API services, deployment pipelines, and reliable systems.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SKILLS -->
+
+        <section id="skills">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Technical Foundation</span>
+                    <h2>Skills & Technologies</h2>
+                    <p>
+                        Technologies I use and areas I'm actively developing
+                        to become an AI Engineer.
+                    </p>
+                </div>
+
+                <div class="skills-wrapper">
+
+                    <div class="skill-category">
+                        <h3>🧠 AI & Emerging Technologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag ai">Generative AI</span>
+                            <span class="skill-tag ai">Large Language Models</span>
+                            <span class="skill-tag ai">Prompt Engineering</span>
+                            <span class="skill-tag ai">LLM Integration</span>
+                            <span class="skill-tag ai">RAG (Learning)</span>
+                            <span class="skill-tag ai">AI Agents (Learning)</span>
+                            <span class="skill-tag ai">Machine Learning Fundamentals</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>💻 Programming Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Dart</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>🌐 Web Development</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>📱 Mobile Development</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Flutter</span>
+                            <span class="skill-tag">React Native</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>🗄️ Backend & Database</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Firebase</span>
+                            <span class="skill-tag">Supabase</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">Cloud Firestore</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>🛠️ Development Tools</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Android Studio</span>
+                            <span class="skill-tag">Vercel</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-icons">
+                        <img src="https://skillicons.dev/icons?i=python,js,ts,dart,react,next,flutter,tailwind,firebase,supabase,fastapi,git,vscode"
+                            alt="Programming languages and development technology icons" />
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PROJECTS -->
+
+        <section id="projects">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">My Work</span>
+                    <h2>Featured Projects</h2>
+                    <p>
+                        Applications and software products I've been building
+                        using modern technologies and AI-assisted development workflows.
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+
+                    <!-- AGRIONE -->
+
+                    <article class="project-card">
+
+                        <div class="project-top">
+                            <div class="project-icon">🌾</div>
+                            <span class="project-status">In Development</span>
+                        </div>
+
+                        <h3>AgriOne</h3>
+
+                        <p>
+                            A smart agriculture platform designed to connect farmers
+                            and buyers through direct crop trading, farm cost analysis,
+                            and harvest planning.
+
+                            The project explores opportunities for intelligent
+                            agricultural decision-support features.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>Next.js</span>
+                            <span>Firebase</span>
+                            <span>AI-Assisted Development</span>
+                        </div>
+
+                        <a href="https://agrione.site/" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Explore Project →
+                        </a>
+
+                    </article>
+
+
+                    <!-- GHATPAR -->
+
+                    <article class="project-card">
+
+                        <div class="project-top">
+                            <div class="project-icon">🛒</div>
+                            <span class="project-status">In Development</span>
+                        </div>
+
+                        <h3>Ghatpar</h3>
+
+                        <p>
+                            A grocery delivery platform featuring product management,
+                            customer experiences, and multi-role operational dashboards.
+
+                            Focused on building a practical full-stack commerce system.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Firebase</span>
+                            <span>AI-Assisted Development</span>
+                        </div>
+
+                        <a href="https://ghatpar.vercel.app/" target="_blank" rel="noopener noreferrer"
+                            class="project-link">
+                            Explore Project →
+                        </a>
+
+                    </article>
+
+
+                    <!-- LIBRARY MANAGEMENT SYSTEM -->
+
+                    <article class="project-card">
+
+                        <div class="project-top">
+                            <div class="project-icon">📚</div>
+                            <span class="project-status">Ongoing</span>
+                        </div>
+
+                        <h3>Smart Library Management System</h3>
+
+                        <p>
+                            A role-based library management application with
+                            authentication, authorization, and separate experiences
+                            for members, administrators, and librarians.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>TypeScript</span>
+                            <span>FastAPI</span>
+                            <span>Python</span>
+                        </div>
+
+                        <a href="https://library-management-system-mauve-eight.vercel.app/" target="_blank"
+                            rel="noopener noreferrer" class="project-link">
+                            Explore Project →
+                        </a>
+
+                    </article>
+
+
+                    <!-- AVALONMART -->
+
+                    <article class="project-card">
+
+                        <div class="project-top">
+                            <div class="project-icon">🏪</div>
+                            <span class="project-status">In Development</span>
+                        </div>
+
+                        <h3>AvalonMart</h3>
+
+                        <p>
+                            A full-stack e-commerce platform with authentication,
+                            product management, shopping cart, checkout, and
+                            administrative dashboards.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>Next.js</span>
+                            <span>TypeScript</span>
+                            <span>Firebase</span>
+                            <span>Tailwind CSS</span>
+                        </div>
+
+                        <a href="https://avalonmart.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Explore Project →
+                        </a>
+
+                    </article>
+
+
+                    <!-- E GOVERNANCE -->
+
+                    <article class="project-card">
+
+                        <div class="project-top">
+                            <div class="project-icon">🏛️</div>
+                            <span class="project-status">Frontend Demo</span>
+                        </div>
+
+                        <h3>E-Governance Complaint Management System</h3>
+
+                        <p>
+                            A frontend concept for an urban municipal complaint
+                            management platform, designed to simplify digital
+                            citizen-to-government communication.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Tailwind CSS</span>
+                        </div>
+
+                        <a href="https://sadmanss.github.io/E-Governance-Complaint-Management-System-for-Urban-Municipal-Services/"
+                            target="_blank" rel="noopener noreferrer" class="project-link">
+                            Explore Project →
+                        </a>
+
+                    </article>
+
+                </div>
+
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="https://github.com/SadmanSS" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-outline">
+                        Explore My GitHub →
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- AI ENGINEERING ROADMAP -->
+
+        <section id="roadmap">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Continuous Learning</span>
+                    <h2>My AI Engineering Journey</h2>
+                    <p>
+                        The technical disciplines I'm focusing on to transition
+                        from full-stack application development into AI Engineering.
+                    </p>
+                </div>
+
+                <div class="roadmap">
+
+                    <div class="roadmap-grid">
+
+                        <div class="roadmap-item">
+                            <span class="roadmap-number">01</span>
+                            <div>
+                                <h3>Python & Machine Learning</h3>
+                                <p>
+                                    Strengthening Python, mathematics, data processing,
+                                    and fundamental machine learning concepts.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="roadmap-item">
+                            <span class="roadmap-number">02</span>
+                            <div>
+                                <h3>Generative AI & LLMs</h3>
+                                <p>
+                                    Understanding LLMs, model APIs, prompt engineering,
+                                    structured outputs, and model integration.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="roadmap-item">
+                            <span class="roadmap-number">03</span>
+                            <div>
+                                <h3>RAG & Vector Databases</h3>
+                                <p>
+                                    Learning embeddings, semantic search, vector storage,
+                                    and retrieval-based AI applications.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="roadmap-item">
+                            <span class="roadmap-number">04</span>
+                            <div>
+                                <h3>AI Agents & Tool Calling</h3>
+                                <p>
+                                    Exploring autonomous workflows, tool integration,
+                                    agent orchestration, and task automation.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="roadmap-item">
+                            <span class="roadmap-number">05</span>
+                            <div>
+                                <h3>AI Application Engineering</h3>
+                                <p>
+                                    Building complete AI-powered applications
+                                    by combining models, APIs, databases, and interfaces.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="roadmap-item">
+                            <span class="roadmap-number">06</span>
+                            <div>
+                                <h3>Deployment & Production AI</h3>
+                                <p>
+                                    Exploring cloud deployment, AI evaluation,
+                                    observability, scalability, and reliability.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section id="contact">
+            <div class="container">
+
+                <div class="contact-box">
+
+                    <span class="section-label">Get In Touch</span>
+
+                    <h2>Let's Build Something <span class="gradient-text">Intelligent.</span></h2>
+
+                    <p>
+                        I'm always interested in connecting with developers,
+                        AI enthusiasts, engineers, and people building meaningful
+                        technology.
+                    </p>
+
+                    <a href="mailto:sadmansakib9653@gmail.com" class="btn btn-primary">
+                        Send Me an Email →
+                    </a>
+
+                    <div class="social-links">
+
+                        <a href="https://github.com/SadmanSS" target="_blank" rel="noopener noreferrer">
+                            GitHub
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/sadmansakibshaon/" target="_blank"
+                            rel="noopener noreferrer">
+                            LinkedIn
+                        </a>
+
+                        <a href="mailto:sadmansakib9653@gmail.com">
+                            Email
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container">
+            <p>© <span id="year"></span> Sadman Sakib Shaon.</p>
+            <p>Building the future, one intelligent solution at a time. 🚀</p>
+        </div>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+        // Theme toggle
+
+        const themeToggle = document.getElementById("themeToggle");
+        const body = document.body;
+
+        const savedTheme = localStorage.getItem("portfolio-theme");
+
+        if (savedTheme) {
+            body.setAttribute("data-theme", savedTheme);
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            body.setAttribute("data-theme", "dark");
+        }
+
+        function updateThemeIcon() {
+            themeToggle.textContent =
+                body.getAttribute("data-theme") === "dark" ? "☀️" : "🌙";
+        }
+
+        updateThemeIcon();
+
+        themeToggle.addEventListener("click", () => {
+            const currentTheme = body.getAttribute("data-theme");
+
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+            body.setAttribute("data-theme", newTheme);
+            localStorage.setItem("portfolio-theme", newTheme);
+
+            updateThemeIcon();
+        });
+
+
+        // Mobile navigation
+
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("active");
+
+            menuToggle.setAttribute("aria-expanded", isOpen);
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.textContent = "☰";
+            });
+        });
+
+
+        // Dynamic footer year
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
 </body>
+
 </html>
